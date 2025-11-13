@@ -5,5 +5,18 @@
     font-family: 'Exo 2', sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-
+    box-sizing: border-box;
+}
+body{
+    background-color: #03212a;
+}
+.container{
+    width: 400px;
+    padding: 25px 35px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:#faf2d5;
+    border-radius: 10px;
 }
