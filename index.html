@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dots</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
         <p>Enter your text or URL</p>
-        <input type="text" placeholder="text or URL">
-        <button>Generate</button>
+        <input type="text" placeholder="text or URL" id="qrText">
+        <div class="imageQrCode">
+            <img src=""  alt="" id="qrImage">
+        </div>
+        <button onclick="generateQRCode()">Generate QR Code</button>
     </div>
 </body> 
 </html>
