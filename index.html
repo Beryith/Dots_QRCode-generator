@@ -5,19 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="test.js"></script>
 </head>
 <body>
     <div class="wrapper">
         <h1>Générateur de QR Code</h1>
         <div class="form">
-            <input type="text" placeholder="Entrez un texte ou un lien">
-            <button>Générer</button>
+            <input type="text" id="text" placeholder="Entrez un texte ou un lien">
+            <button id="generate">Générer</button>
         </div>
-        <div class="result">
+        <div class="result" id="result">
             <canvas id="qrcode"></canvas>
             <a id="download" href="#">Télécharger le QR Code</a>
         </div>
     </div>
+    <script src="test.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
 </body>
 </html>
