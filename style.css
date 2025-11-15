@@ -2,47 +2,91 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Exo 2', sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
     box-sizing: border-box;
+    font-family: "Exo 2", sans-serif;
+}
+a{
+    text-decoration: none;
 }
 body{
-    background-color: #03212a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(Gemini_Generated_Image_16zzfm16zzfm16zz.png);
+    background-size: cover;
+    background-position: center;
+    color: #f4eee3;
 }
-.container{
-    width: 400px;
-    padding: 25px 35px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color:#f4f0e3;
-    border-radius: 10px;
+.wrapper{
+    background-color: transparent;
+    background: hsl(0, 0%, 100%, 0.3);
+    border:1px solid hsl(0, 0%, 100%, 0.4);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    flex-direction: column;
+    width: 500px;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
+    text-align: center;
+    position: relative;
+    transition: all 0.2s ease-in-out;
 }
-.container p{
-    font-weight: 600;
-    font-size: 15px;
-    margin-bottom: 8px;
+h1{
+    font-size: 20px;
+    margin-bottom: 20px;
 }
-.container input{
-    width: 100%;
-    height: 50px;
-    border: 1px solid #ccc9c5;
-    outline: 0;
-    margin: 10px 0 20px;
-    border-radius: 5px;
+.form{
+    background-color: transparent;
+    background: hsla(0, 0%, 100%, 0.1);
+    border:1px solid hsl(0, 0%, 100%, 0.2);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 30px;
 }
-.container button{
-    width: 100%;
-    height: 50px;
-    background:#03212a;
-    color: #f4f0e3;
-    border: 0;
-    outline: 0;
-    border-radius: 5px;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+input, button, #download{
+    padding: 15px;
+    outline: none;
+    border-radius: 30px;
+    background-color: transparent;
+    border:1px solid hsl(0, 0%, 100%, 0.3);
+    color: #f4eee3;
+    margin-top: 10px;
+}
+button, #download{
+    background-color: transparent;
+    background: hsla(204, 98%, 40%, 0.333);
     cursor: pointer;
-    margin: 20px 0;
-    font-weight: 500;
+    transition: 0.5s;
+}
+button:hover, #download:hover{
+    background-color: transparent;
+    background: hsla(204, 97%, 48%, 0.498);
+}
+.result{
+    margin-top: 10px;
+    width: 100%;
+    height: auto;
+    display: none;
+}
+.result.active{
+    display: flex;
+}
+#qrcode{
+    margin-top: 10px;
+    width: 100%;
+    height: auto;
+    border:1px solid hsl(0, 0%, 100%, 0.3);
+    border-radius: 30px;
+}
+#download{
+    display: none;
+    margin-top: 10px;
+    font-size: 14px;
+    width: 100%;
 }
