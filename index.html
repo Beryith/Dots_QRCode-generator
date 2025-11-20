@@ -1,24 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="wrapper">
-        <h1>Générateur de QR Code</h1>
-        <div class="form">
-            <input type="text" id="text" placeholder="Entrez un texte ou un lien">
-            <button id="generate">Générer</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page Glasmorphique</title>
+    <!--
+        Liaison avec la feuille de style principale.
+        Le design glasmorphique est défini dans style.css.
+    -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--
+        En-tête principal de la page.
+        La balise sémantique <header> représente la partie haute du site,
+        contenant ici une barre de navigation minimaliste.
+    -->
+    <header class="site-header">
+      <nav class="nav">
+        <!-- Logo ou nom de la marque -->
+        <a href="#hero" class="nav-logo">Minimal Glass</a>
+
+        <!--
+                Liste de liens de navigation internes.
+                Chaque lien pointe vers une section de la page (ancre HTML).
+            -->
+        <ul class="nav-links">
+          <li><a href="#features">Fonctionnalités</a></li>
+          <li><a href="#qrcode-section">QR Code</a></li>
+          <li><a href="#about">À propos</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--
+        Contenu principal de la page.
+        La balise <main> regroupe les sections les plus importantes de la landing page.
+    -->
+    <main>
+      <!--
+            Section hero : zone d’accroche principale, centrée verticalement.
+            On y place un titre, un sous-titre et un bouton d’appel à l’action (CTA).
+        -->
+      <section id="hero" class="hero">
+        <!--
+                Bloc glasmorphique (panneau en verre dépoli) pour mettre en avant le contenu.
+                La classe glass-panel est stylée en CSS pour obtenir l'effet de verre.
+            -->
+        <div class="hero-content glass-panel">
+          <!-- Titre principal de la page -->
+          <h1>Une expérience glasmorphique épurée</h1>
+          <!-- Sous-titre explicatif -->
+          <p>
+            Créez des interfaces modernes, lumineuses et légères grâce à un
+            design « verre dépoli » minimaliste.
+          </p>
+          <!--
+                    Bouton principal de la page.
+                    Un écouteur d'événement JavaScript est attaché à ce bouton
+                    pour déclencher une alerte et un scroll fluide.
+                -->
+          <button id="cta-button" class="btn-primary">
+            Découvrir les sections
+          </button>
         </div>
-        <div class="result" id="result">
-            <canvas id="qrcode"></canvas>
-            <a id="download" href="#">Télécharger le QR Code</a>
+      </section>
+
+      <!--
+            Section des fonctionnalités.
+            Chaque <article> représente une carte de contenu autonome,
+            stylée en glasmorphisme via la classe glass-card.
+        -->
+      <section id="features" class="features">
+        <article class="glass-card">
+          <h2>Design minimaliste</h2>
+          <p>
+            Une palette réduite, des typographies modernes et une mise en page
+            aérée pour mettre le contenu en valeur.
+          </p>
+        </article>
+
+        <article class="glass-card">
+          <h2>Effet verre dépoli</h2>
+          <p>
+            Transparence, flou d'arrière-plan et ombres douces créent une
+            impression de profondeur sans surcharger la page.
+          </p>
+        </article>
+
+        <article class="glass-card">
+          <h2>Responsive par défaut</h2>
+          <p>
+            La mise en page s'adapte automatiquement aux écrans desktop,
+            tablette et mobile.
+          </p>
+        </article>
+      </section>
+
+      <!--
+            Section « À propos » pour décrire le but de cette démo.
+            On réutilise la classe glass-panel pour conserver l'effet verre.
+        -->
+      <section id="about" class="about glass-panel">
+        <h2>À propos de cette démo</h2>
+        <p>
+          Cette landing page illustre l'utilisation de l'effet glasmorphique en
+          combinant HTML5 sémantique, CSS moderne (variables, blur,
+          transparence) et un peu de JavaScript pour les interactions.
+        </p>
+      </section>
+
+      <!--
+            Section glasmorphique dédiée au générateur de QR Code.
+            On réutilise les identifiants d'origine (text, generate, qrcode, download)
+            pour la compatibilité avec la logique JavaScript existante.
+        -->
+      <section id="qrcode-section" class="qrcode-section glass-panel">
+        <!-- Titre de la fonctionnalité QR Code -->
+        <h2>Générateur de QR Code</h2>
+        <!--
+                Conteneur du formulaire : un champ de texte et un bouton
+                pour lancer la génération du QR Code.
+            -->
+        <div class="qrcode-form">
+          <input
+            type="text"
+            id="text"
+            placeholder="Entrez un texte ou un lien à encoder"
+          />
+          <button id="generate" class="btn-primary">Générer le QR Code</button>
         </div>
-    </div>
-    <script src="test.js"></script>
+
+        <!--
+                Zone de résultat :
+                - le canvas où le QR Code sera dessiné,
+                - un lien pour télécharger l'image générée.
+            -->
+        <div class="qrcode-result" id="result">
+          <canvas id="qrcode"></canvas>
+          <a id="download" href="#">Télécharger le QR Code</a>
+        </div>
+      </section>
+
+      <!--
+            Section de contact simplifiée.
+            Elle sert surtout de point d'ancrage pour le scroll fluide et
+            pour montrer une autre zone glasmorphique.
+        -->
+      <section id="contact" class="contact glass-panel">
+        <h2>Restons en contact</h2>
+        <p>
+          Intégrez ce style à vos propres projets ou adaptez-le selon votre
+          identité visuelle.
+        </p>
+      </section>
+    </main>
+
+    <!--
+        Pied de page de la page.
+        La balise <footer> contient ici un simple texte de droits d'auteur.
+    -->
+    <footer class="site-footer">
+      <p>2025 Minimal Glass. Tous droits réservés.</p>
+    </footer>
+
+    <!--
+        Script de la bibliothèque QRCode utilisé pour générer le QR Code
+        dans le canvas. La bibliothèque est chargée avant notre script principal.
+    -->
     <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
-</body>
+
+    <!--
+        Inclusion du script JavaScript principal.
+        Ce fichier contient la logique d'interaction :
+        - scroll fluide vers les sections,
+        - clic sur le bouton CTA,
+        - génération et téléchargement du QR Code.
+    -->
+    <script src="test.js"></script>
+  </body>
 </html>
